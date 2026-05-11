@@ -1,0 +1,118 @@
+:root {
+    --paper-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-blue: #1e3a8a;
+    --sidebar-color: #f9f9f9;
+}
+
+/* Barra de navegación superior */
+.paper-nav {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.paper-nav a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0; /* Fondo fuera del papel */
+    margin: 0;
+    padding: 40px 20px;
+    color: var(--text-color);
+}
+
+/* Contenedor del "Papel" */
+ article {
+    background: var(--paper-bg);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 80px 100px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    line-height: 1.7;
+}
+
+/* Encabezado Estilo Journal */
+header {
+    border-bottom: 2px solid var(--text-color);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.journal-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+}
+
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.5rem;
+    margin: 20px 0 10px 0;
+    line-height: 1.2;
+}
+
+.author {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #888;
+    font-family: monospace;
+}
+
+/* Cuerpo del Texto */
+section {
+    font-family: 'Libre Baskerville', serif; /* Fuente con serifa para lectura larga */
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 15px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo para Ecuaciones */
+.equation-block {
+    padding: 20px 0;
+    overflow-x: auto;
+}
+
+/* Notas y Citas */
+blockquote {
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--sidebar-color);
+    border-radius: 5px;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    article { padding: 40px 30px; }
+    h1 { font-size: 1.8rem; }
+}

@@ -1,0 +1,125 @@
+/* Variables Globales de Marca IGO */
+:root {
+    --primary-blue: #1e3a8a;
+    --accent-green: #27ae60;
+    --text-main: #1a1a1a;
+    --text-muted: #666666;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navegación */
+nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.btn-contribute {
+    background: var(--text-main);
+    color: var(--white) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+header {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.italic-blue {
+    color: var(--primary-blue);
+    font-style: italic;
+}
+
+/* Secciones de Contenido */
+section {
+    padding: 4rem 2rem;
+}
+
+.container-slim {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Grid de Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.ref-tag {
+    font-family: monospace;
+    background: #eff6ff;
+    color: var(--primary-blue);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}

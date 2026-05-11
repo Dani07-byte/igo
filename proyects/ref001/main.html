@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGO | Ref#001 - Título del Paper</title>
+    
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <nav class="paper-nav">
+        <a href="../../index.html">← Volver al Inicio</a>
+    </nav>
+
+    <article>
+        <header>
+            <div class="journal-name">Editorial IGO | Physics & Mathematics</div>
+            <h1>Desigualdad de Cauchy Schwarz</h1>
+            <div class="author">Por: Daniel Cárdenas Salazar</div>
+            <div class="meta">REF001 | Publicado: 2026-05 | Área: Álgebra Lineal</div>
+        </header>
+
+        <section>
+            <p>
+                En el presente paper, exploramos la derivación de la desigualdad de Cauchy-Schwarz a partir de la definición de producto interno para cualquier espacio <i>Euclídeo</i> real.
+            </p>
+
+            <h2>Espacios Euclideos</h2>
+            <p>
+                Sea $V$ un espacio vectorial, este se dice un espacio <b>Euclídeo</b> si y solo si para cada $x,y,z\in V$ y $c\in\mathbb{R}$, existe un escalar denotado por $(x,y)$ tal que:
+            </p>
+            <div class="equation-block">
+                $$
+                \begin{aligned}
+                \text{i)}& \quad (x,y) = (y,x) &(Conmutatividad).\\[6pt]
+                \text{ii)}& \quad (x,y + z) = (x,y) + (x,z) &(Linealidad).\\[6pt]
+                \text{iii)}& \quad c(x,y) = (cx,y) &(Homogeneidad).\\[6pt]
+                \text{iv)}& \quad (x,x)>0 \quad\text{sii}\quad x\neq 0  &(Positividad).
+                \end{aligned}
+                $$
+            </div>
+            <p>La función $(x,y)$ en caso de que exista se llama <b>Producto interior</b> de $V$</p>
+
+            <b>Teorema:</b> <i>En un espacio euclídeo $V$, todo producto interior satisface la desiguald de Cauchy-Schwarz.</i>
+            <div class="equation-block">
+                $$
+                (x,y)^2 \leq (x,x)(y,y)
+                $$
+            </div>
+            <b><i>Demostración:</i></b> En el caso de tanto $x$ como $y$ sean $0$, la demostración es trivial, entonces, supongase $x$ e $y$ no simultaneamente nulos. Sea $w = ax + by \neq 0$ para dos escalares $a,b$ no nulos cualesquiera, por el axioma de positividad, se tiene $(w,w) > 0$, luego, por los axiomas (i), (ii) y (iii), se tiene,
+            
+            <div class="equation-block">
+                $$
+                \begin{aligned}
+                (w,w) &= (ax+by,ax+by) = (ax+by,ax) + (ax+by,by)\\
+                &= (ax, ax+by) + (by, ax+by) = (ax, ax) + 2(ax,by) + (by,by)\\
+                &= a^2(x,x) + 2ab(x,y) + b^2(y,y) > 0
+                \end{aligned}
+                $$
+            </div>
+            <p>Escojanse los escalares $a = (y,y)$ y $b = -(x,y)$, entonces,</p>
+            <div class="equation-block">
+                $$\begin{aligned}
+                  (y,y)^2&(x,x) + 2b(y,y)(x,y) + b^2(y,y)\\
+                  = &(y,y)(x,x) + 2b(x,y) + b^2\\
+                  =&(y,y)(x,x) - 2(x,y)^2 + (x,y)^2\\
+                  =&(y,y)(x,x) - (x,y)^2 > 0\\[6pt]
+                  \implies &\boxed{(y,y)(x,x) > (x,y)^2}
+                \end{aligned}$$
+            </div>
+            <p>Esto completa la demostración</p>
+            
+            <h2>Ejemplos</h2>
+            <h3>El espacio $\mathbb{R}^n$</h3>
+            <p>En el clásico $\mathbb{R}^n$, conformado por las $n-$plas ordenadas de la forma $x = (x_1,\dots,x_n)$, con $x_1,\dots,x_n \in\mathbb{R}$, no es tarea difícil demostrar que la función</p>
+            <div class="equation-block">
+                $$
+                (x,y) = \sum_{i=1}^n x_iy_i
+                $$
+            </div>
+            <p>es un producto interno. Por lo cual, cumple la desigualdad de Cauchy-Schwarz, que en este caso toma la forma de</p>
+            <div class="equation-block">
+                $$
+                \left(\sum_{i=1}^n x_iy_i\right)^2 \leq \left(\sum_{i=1}^n x_i^2\right)\left(\sum_{i=1}^n y_i^2\right)
+                $$
+            </div>
+
+            <h3>El espacio $C[a,b]$</h3>
+
+            Considerese ahora el conjunto de todas las funciones continuas en un intervalo $[a,b]$, se verifica fácilmente que un producto interno de este espacio es
+            <div class="equation-block">
+                $$
+                (f,g) = \int_a^b f(x)g(x)dx
+                $$
+            </div>
+            Entonces, como consecuencia de la desigualdad de Cauchy-Schwarz,
+            <div class="equation-block">
+                $$
+                \left(\int_a^b f(x)g(x)dx \right) \leq \left(\int_a^bf^2(x)dx\right)\left(\int_a^bg^2(x)dx\right)
+                $$
+            </div>
+
+<!--             <blockquote>
+                Nota: Esta formulación es independiente del sistema de coordenadas elegido, lo que la hace superior a la mecánica Newtoniana en problemas complejos.
+            </blockquote> -->
+        </section>
+
+        <footer>
+            <p>Referencias:</p>
+            <ul>
+                <li>Tom M. Apostol Calculus vol. 2</li>
+            </ul>
+        </section>
+    </article>
+
+</body>
+</html>
